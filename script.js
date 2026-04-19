@@ -289,41 +289,54 @@ const articles = document.querySelectorAll(".article-card");
 const categoryButtons = document.querySelectorAll(".category-btn");
 
 // Ouvrir le modal avec le contenu de l’article
-articles.forEach(article => {
-    article.addEventListener("click", () => {
-        const articleKey = article.getAttribute("data-article");
-        const articleData = articlesData[articleKey];
-        modalTitle.innerHTML = articleData.title;
-        modalBody.innerHTML = articleData.content;
-        modal.style.display = "block";
-    });
-});
-
-// Fermer le modal
-closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-// Fermer le modal si clic à l’extérieur
-window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-});
-
-// Filtrage par catégorie
-categoryButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const category = button.getAttribute("data-category");
-        categoryButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        articles.forEach(article => {
-            if (category === "all" || article.getAttribute("data-category") === category) {
-                article.style.display = "block";
-            } else {
-                article.style.display = "none";
+if (modal && modalTitle && modalBody && articles.length > 0) {
+    articles.forEach(article => {
+        article.addEventListener("click", () => {
+            const articleKey = article.getAttribute("data-article");
+            const articleData = articlesData[articleKey];
+            if (!articleData) {
+                return;
             }
+
+            modalTitle.innerHTML = articleData.title;
+            modalBody.innerHTML = articleData.content;
+            modal.style.display = "block";
         });
     });
-});
+}
+
+// Fermer le modal
+if (closeModal && modal) {
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+}
+
+// Fermer le modal si clic à l’extérieur
+if (modal) {
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+
+// Filtrage par catégorie
+if (categoryButtons.length > 0 && articles.length > 0) {
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const category = button.getAttribute("data-category");
+            categoryButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            articles.forEach(article => {
+                if (category === "all" || article.getAttribute("data-category") === category) {
+                    article.style.display = "block";
+                } else {
+                    article.style.display = "none";
+                }
+            });
+        });
+    });
+}
+

@@ -96,6 +96,7 @@ body {
 .contact-label { color: #999; font-size: 0.9rem; display: block; }
 .contact-value { color: #fff; font-weight: 500; }
 
+
 /* Main */
 .main-content { flex: 1; margin-left: 350px; padding: 2rem; background: #1a1a1a; }
 
@@ -122,6 +123,7 @@ body {
     background-color: #8B5CF6; margin-top: 0.5rem;
 }
 .section-text { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8; }
+
 
 /* Timeline (Éducation) */
 .timeline { position: relative; margin: 2rem 0; padding-left: 2rem; border-left: 3px solid #8B5CF6; }
@@ -178,6 +180,15 @@ body {
 .experience-content h4 { font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem; color: #8B5CF6; }
 .experience-date { font-size: 0.9rem; color: #aaa; display: block; margin-bottom: 0.8rem; }
 
+.experience-content ul {
+    padding-left: 1.1rem;
+    color: #e0e0e0;
+}
+
+.experience-content li {
+    margin-bottom: 0.5rem;
+}
+
 /* Animations */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -212,23 +223,107 @@ html { scroll-behavior: smooth; }
     cursor: pointer; /* Indique que c'est interactif */
 }
 
-.skill-card:hover {
-    transform: translateX(10px); /* Translation vers la droite comme les boutons */
-    background-color: #8B5CF6; /* Change la couleur de fond */
-    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.4); /* Ombre violette */
+.skills-modern {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.skill-pillar {
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 290px;
+    padding: 1.25rem;
+    border: 1px solid rgba(139, 92, 246, 0.16);
+    border-radius: 18px;
+    background: linear-gradient(180deg, #212121, #1b1b1b);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-pillar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, #8B5CF6, #4a9eff);
+}
+
+.skill-pillar h4 {
+    text-align: left;
+    margin: 0;
+}
+
+.skill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.9rem;
+    margin-bottom: 0.9rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-head h4 {
+    margin: 0;
+    text-align: left;
+    line-height: 1.1;
+    font-size: 1.05rem;
+}
+
+.skill-head .skill-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.12);
+    color: #caa7ff;
+    font-size: 1.1rem;
+}
+
+.skill-tags {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.55rem;
+    padding: 0.52rem 0.7rem;
+    border-radius: 11px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: #e2e2e2;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.skill-pillar:hover .skill-tags {
+    background: rgba(139, 92, 246, 0.08);
+    color: #fff;
+    border-color: rgba(139, 92, 246, 0.18);
+}
+
+.skill-pillar:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+    background: linear-gradient(180deg, #242024, #1c1c1c);
 }
 
 /* Changement de couleur des éléments au hover */
-.skill-card:hover .skill-icon,
-.skill-card:hover h4 {
-    color: #1a1a1a; /* Texte sombre sur fond violet */
+.skill-pillar:hover .skill-icon,
+.skill-pillar:hover h4 {
+    color: #fff;
 }
 
-.skill-card:hover .progress-bar {
+.skill-pillar:hover .progress-bar {
     background-color: #1a1a1a; /* Fond de la barre plus sombre */
 }
 
-.skill-card:hover .progress {
+.skill-pillar:hover .progress {
     background-color: #333; /* Barre de progression plus sombre */
 }
 
@@ -245,6 +340,14 @@ html { scroll-behavior: smooth; }
     color: #fff;
     text-align: center;
     transition: color 0.3s ease; /* Transition pour le titre */
+}
+
+.skill-pillar .skill-icon {
+    margin-bottom: 0;
+}
+
+.skill-pillar .skill-card h4 {
+    text-align: left;
 }
 
 .progress-bar {
@@ -273,59 +376,163 @@ html { scroll-behavior: smooth; }
     color: #fff;
 }
 
-.cert-slider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cert-showcase {
     margin-top: 2rem;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+    align-items: stretch;
 }
 
-.slides {
+.cert-featured {
+    height: 100%;
+    background: linear-gradient(160deg, #242424, #1b1b1b);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    border-radius: 16px;
+    padding: 1.2rem;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
     display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 250px; /* largeur de chaque slide */
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background: #2d2d2d;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-align: center;
 }
 
-.slide img {
-    max-width: 100%;
-    max-height: 150px;
+.cert-badge {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #111;
+    background: #8B5CF6;
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 0.9rem;
+    font-weight: 700;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cert-featured img {
+    width: 100%;
+    height: 220px;
     object-fit: contain;
+    border-radius: 10px;
+    background: #0f0f0f;
+    border: 2px solid #000;
+    padding: 0.15rem;
 }
 
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(139, 92, 246, 0.8);
-    border: none;
+.cert-featured-content h3 {
+    margin-top: 0.9rem;
+    font-size: 1.25rem;
     color: #fff;
-    padding: 0.5rem 0.8rem;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    transition: background 0.3s;
-    z-index: 10;
+    text-align: center;
 }
 
-.arrow:hover {
-    background-color: #8B5CF6;
+.cert-featured-content p {
+    color: #c9c9c9;
+    margin: 0.5rem 0 0.8rem;
+    text-align: center;
 }
 
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
+.cert-featured-content a,
+.cert-tile a {
+    color: #8B5CF6;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cert-featured-content a:hover,
+.cert-tile a:hover {
+    text-decoration: underline;
+}
+
+.cert-stack {
+    display: contents;
+}
+
+.cert-tile {
+    height: 100%;
+    background: #252525;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 14px;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cert-tile a,
+.cert-featured-content a {
+    margin-top: auto;
+}
+
+.rgpd-cert a {
+    margin-top: 0.35rem;
+}
+
+.rgpd-cert img {
+    margin-bottom: 0.45rem;
+}
+
+.cert-tile img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #0f0f0f;
+    border: 2px solid #000;
+    padding: 0.15rem;
+    margin: 0 0 0.7rem;
+}
+
+.cert-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.22);
+}
+
+.cert-tile-icon {
+    font-size: 1.9rem;
+    color: #8B5CF6;
+    margin-bottom: 0.5rem;
+}
+
+.cert-tile h3 {
+    color: #fff;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+
+.cert-tile p {
+    color: #c8c8c8;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.cert-tile a,
+.cert-featured-content a {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .cert-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-stack {
+        display: grid;
+        gap: 1rem;
+    }
+}
 
 /* ================================
    STYLES POUR LA PAGE DE VEILLE
