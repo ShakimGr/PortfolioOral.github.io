@@ -6,23 +6,16 @@
     <title>Shakim Guerin - Veille Technologique</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
-    
-    <!-- Favicon serveur 2 racks noir -->
     <link rel="icon" type="image/svg+xml"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%23000000' d='M32 64c0-17.7 14.3-32 32-32H576c17.7 0 32 14.3 32 32V160c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V64zm0 160c0-17.7 14.3-32 32-32H576c17.7 0 32 14.3 32 32V320c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V224zM128 96a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0 160a32 32 0 1 0 0 64 32 32 0 1 0 0-64z'/></svg>">
 </head>
-
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-img"></div>
-            
             <h1 class="name">Shakim Guerin</h1>
-            <p class="title">Technicien Sécurité Réseau</p>
-            
+            <p class="title">Administrateur systèmes et réseaux</p>
             <div class="contact-info">
-                <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/shakim-guerin-468437383" target="_blank" class="contact-item">
                     <i class="fab fa-linkedin"></i>
                     <div>
@@ -30,8 +23,6 @@
                         <div class="contact-value">Shakim Guerin</div>
                     </div>
                 </a>
-
-                <!-- Email -->
                 <a href="mailto:shakimguerin51@gmail.com" class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div>
@@ -39,8 +30,6 @@
                         <div class="contact-value">shakimguerin51@gmail.com</div>
                     </div>
                 </a>
-
-                <!-- CV (téléchargement) -->
                 <a href="cv_shakim_guerin.pdf" download class="contact-item">
                     <i class="fas fa-file-alt"></i>
                     <div>
@@ -51,9 +40,7 @@
             </div>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
-            <!-- Navigation -->
             <nav class="navbar">
                 <ul class="nav-menu">
                     <li><a href="../index.html">À propos</a></li>
@@ -63,169 +50,538 @@
                 </ul>
             </nav>
 
-            <!-- Blog Header -->
-            <div class="blog-header">
+            <section class="blog-header">
                 <h1 class="blog-title">Veille Technologique</h1>
-                <p class="blog-subtitle">Actualités et tendances en cybersécurité et infrastructure réseau</p>
-                
-                <!-- Categories Filter -->
-                <div class="categories-filter">
-                    <button class="category-btn active" data-category="all">Tous</button>
-                    <button class="category-btn" data-category="cybersecurity">Cybersécurité</button>
-                    <button class="category-btn" data-category="network">Réseaux</button>
-                    <button class="category-btn" data-category="tools">Outils</button>
-                    <button class="category-btn" data-category="trends">Tendances</button>
+                <p class="blog-subtitle">La cybersécurité des objets connectés (IoT) et de la domotique</p>
+                <div class="bornage-badges-compact">
+                    <span class="badge-small badge-bornage">Faille de sécurité</span>
+                    <span class="badge-small badge-bornage">Les cyberattaques</span>
+                    <span class="badge-small badge-bornage">Normes et lois</span>
                 </div>
-            </div>
-
-            <!-- Articles Grid -->
-            <div class="articles-grid" id="articlesContainer">
-                <!-- Article 1 -->
-                <article class="article-card" data-category="cybersecurity" data-article="siem-evolution">
-                    <div class="article-category">Cybersécurité</div>
-                    <h3 class="article-title">L'évolution des SIEM vers les plateformes XDR</h3>
-                    <p class="article-excerpt">Les solutions de gestion des informations et événements de sécurité (SIEM) évoluent rapidement vers des plateformes XDR plus intégrées...</p>
-                    <div class="article-meta">
-                        <div class="article-date">
-                            <i class="fas fa-calendar"></i>
-                            15 Sept 2025
-                        </div>
-                        <div class="read-time">
-                            <i class="fas fa-clock"></i>
-                            5 min
-                        </div>
+                <div class="tools-used" style="display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:28px;">
+                    <div class="tools-label" style="color:#c7c7c7; font-weight:600; text-align:center;">Outils de veille utilisée :</div>
+                    <div style="display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap;">
+                        <a href="https://www.google.com/alerts" target="_blank" rel="noopener" class="month-btn" style="display:flex; align-items:center; gap:8px;">
+                            <i class="fas fa-bell" style="width:18px; text-align:center;"></i>
+                            <span>Google Alerts</span>
+                        </a>
+                        <a href="https://feedly.com" target="_blank" rel="noopener" class="month-btn" style="display:flex; align-items:center; gap:8px;">
+                            <i class="fas fa-rss" style="width:18px; text-align:center;"></i>
+                            <span>Feedly</span>
+                        </a>
                     </div>
-                </article>
+                </div>
+                <div class="months-filter" id="monthButtons"></div>
+            </section>
 
-                <!-- Article 2 -->
-                <article class="article-card" data-category="network" data-article="zero-trust">
-                    <div class="article-category">Réseaux</div>
-                    <h3 class="article-title">Architectures Zero Trust : Le futur de la sécurité réseau</h3>
-                    <p class="article-excerpt">L'approche "Never Trust, Always Verify" révolutionne la façon dont nous concevons la sécurité des infrastructures réseau...</p>
-                    <div class="article-meta">
-                        <div class="article-date">
-                            <i class="fas fa-calendar"></i>
-                            12 Sept 2025
-                        </div>
-                        <div class="read-time">
-                            <i class="fas fa-clock"></i>
-                            7 min
-                        </div>
+            <section class="news-panel">
+                <div class="news-panel-header">
+                    <div>
+                        <p class="news-panel-kicker">Mois sélectionné</p>
+                        <h2 class="news-panel-title" id="selectedMonthTitle"></h2>
                     </div>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="article-card" data-category="tools" data-article="ai-cybersec">
-                    <div class="article-category">Outils</div>
-                    <h3 class="article-title">Intelligence Artificielle en cybersécurité</h3>
-                    <p class="article-excerpt">Comment l'IA transforme la détection des menaces et l'analyse comportementale dans les SOC modernes...</p>
-                    <div class="article-meta">
-                        <div class="article-date">
-                            <i class="fas fa-calendar"></i>
-                            10 Sept 2025
-                        </div>
-                        <div class="read-time">
-                            <i class="fas fa-clock"></i>
-                            6 min
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 4 -->
-                <article class="article-card" data-category="trends" data-article="quantum-crypto">
-                    <div class="article-category">Tendances</div>
-                    <h3 class="article-title">Cryptographie post-quantique : Préparer l'après</h3>
-                    <p class="article-excerpt">Les avancées en informatique quantique menacent nos systèmes cryptographiques actuels. Comment s'y préparer ?</p>
-                    <div class="article-meta">
-                        <div class="article-date">
-                            <i class="fas fa-calendar"></i>
-                            08 Sept 2025
-                        </div>
-                        <div class="read-time">
-                            <i class="fas fa-clock"></i>
-                            8 min
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 5 -->
-                <article class="article-card" data-category="cybersecurity" data-article="supply-chain">
-                    <div class="article-category">Cybersécurité</div>
-                    <h3 class="article-title">Sécurisation de la chaîne d'approvisionnement logicielle</h3>
-                    <p class="article-excerpt">Les attaques sur la supply chain logicielle augmentent. Stratégies et outils pour se protéger...</p>
-                    <div class="article-meta">
-                        <div class="article-date">
-                            <i class="fas fa-calendar"></i>
-                            05 Sept 2025
-                        </div>
-                        <div class="read-time">
-                            <i class="fas fa-clock"></i>
-                            6 min
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 6 -->
-                <article class="article-card" data-category="network" data-article="5g-security">
-                    <div class="article-category">Réseaux</div>
-                    <h3 class="article-title">Sécurité des réseaux 5G en entreprise</h3>
-                    <p class="article-excerpt">Le déploiement de la 5G apporte de nouveaux défis sécuritaires. Analyse des risques et des solutions...</p>
-                    <div class="article-meta">
-                        <div class="article-date">
-                            <i class="fas fa-calendar"></i>
-                            03 Sept 2025
-                        </div>
-                        <div class="read-time">
-                            <i class="fas fa-clock"></i>
-                            5 min
-                        </div>
-                    </div>
-                </article>
-            </div>
+                </div>
+                <div class="news-grid" id="monthNews"></div>
+            </section>
         </main>
     </div>
 
-    <!-- Modal -->
-    <div id="articleModal" class="modal">
+    <div id="newsModal" class="modal" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="modalTitle"></h2>
-                <span class="close">&times;</span>
+                <h2 class="modal-title" id="newsModalTitle"></h2>
+                <span class="close" id="newsModalClose">&times;</span>
             </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Le contenu sera inséré ici par JavaScript -->
-            </div>
+            <div class="modal-body" id="newsModalBody"></div>
         </div>
     </div>
 
     <script>
-        // Articles data
-        const articlesData = {
-            'siem-evolution': {
-                title: "L'évolution des SIEM vers les plateformes XDR",
-                content: ` ... `
+        const monthlyNews = [
+            {
+                month: "Mars 2025",
+                summary: "Lancement d'une veille orientée identité, accès et premières briques d'automatisation.",
+                items: [
+                    {
+                        tag: "Normes & Lois",
+                        title: "L'Europe impose des règles strictes pour sécuriser les objets connectés",
+                        bornage: "Normes & Lois",
+                        author: "Parlement européen / Commission européenne",
+                        date: "12 Mars 2025",
+                        link: "https://eur-lex.europa.eu/eli/reg/2024/2847/oj",
+                        excerpt: "Le 12 mars 2025, l'Union européenne renforce officiellement le Cyber Resilience Act afin d'améliorer la sécurité des objets connectés et des systèmes domotiques.",
+                        content: "Le 12 mars 2025, l'Union européenne renforce officiellement le Cyber Resilience Act afin d'améliorer la sécurité des objets connectés et des systèmes domotiques. Cette loi oblige les fabricants à intégrer la cybersécurité dès la conception et à garantir un suivi continu des produits après leur mise sur le marché. Les principales obligations incluent : sécurité obligatoire dès la conception des appareils, mises à jour de sécurité régulières et automatisées, obligation de corriger rapidement les vulnérabilités, meilleure protection des données personnelles des utilisateurs, et réduction des risques d'intrusion dans les systèmes domotiques."
+                    },
+                    {
+                        tag: "Attaques",
+                        title: "Les cyberattaques contre les objets connectés deviennent une menace majeure",
+                        bornage: "Attaque",
+                        author: "IoT Now",
+                        date: "27 Mars 2025",
+                        link: "https://iotnow.fr/liot-le-maillon-faible-de-la-cybersecurite-de-demain/",
+                        excerpt: "Les experts en cybersécurité alertent sur une forte augmentation des attaques visant les objets connectés et les systèmes domotiques.",
+                        content: "Le 27 mars 2025, les experts en cybersécurité alertent sur une forte augmentation des attaques visant les objets connectés et les systèmes domotiques. Les pirates exploitent principalement les failles techniques et les mauvaises configurations des équipements. Les principales méthodes d'attaque incluent : utilisation de mots de passe faibles ou identiques par défaut, exploitation d'appareils non mis à jour ou mal sécurisés, ciblage des caméras IP, routeurs et objets domotiques, intrusion dans les réseaux domestiques pour espionnage, et transformation des appareils en botnets pour attaques massives."
+                    }
+                ]
             },
-            'zero-trust': {
-                title: "Architectures Zero Trust : Le futur de la sécurité réseau",
-                content: ` ... `
+            {
+                month: "Avril 2025",
+                summary: "La cybersécurité des objets connectés reste un enjeu majeur avec des failles critiques et des attaques automatisées en augmentation.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Les objets connectés domestiques toujours exposés à de nombreuses failles critiques",
+                        bornage: "Faille de Sécurité",
+                        author: "ANSSI (Agence nationale de la sécurité des systèmes d'information)",
+                        date: "Avril 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts en cybersécurité signalent que de nombreux objets connectés domestiques présentent encore des failles importantes.",
+                        content: "En avril 2025, les experts en cybersécurité signalent que de nombreux objets connectés domestiques présentent encore des failles importantes. Ces vulnérabilités concernent surtout les équipements mal configurés ou non mis à jour, ce qui facilite les attaques à distance. Les principaux problèmes incluent : failles liées aux mises à jour absentes ou retardées, mauvaise configuration des appareils domotiques, accès non sécurisé aux interfaces de contrôle, risques d'intrusion dans les réseaux domestiques, et exposition de données personnelles des utilisateurs."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Des attaques automatisées ciblent massivement les réseaux d'objets connectés",
+                        bornage: "Attaque",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "Avril 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Les chercheurs en cybersécurité observent une augmentation des attaques automatisées visant les objets connectés.",
+                        content: "En avril 2025, les chercheurs en cybersécurité observent une augmentation des attaques automatisées visant les objets connectés. Les cybercriminels utilisent des botnets composés d'appareils IoT compromis pour lancer des attaques à grande échelle. Les principales menaces incluent : utilisation d'objets connectés infectés pour former des botnets, attaques DDoS massives contre des réseaux et services, exploitation des mots de passe faibles et par défaut, ciblage des caméras, routeurs et objets domotiques, et propagation rapide des infections dans les réseaux domestiques."
+                    }
+                ]
             },
-            'ai-cybersec': {
-                title: "Intelligence Artificielle en cybersécurité",
-                content: ` ... `
+            {
+                month: "Mai 2025",
+                summary: "Les systèmes domotiques sont de plus en plus intégrés dans les foyers intelligents, mais cette évolution s'accompagne de nouvelles vulnérabilités et d'attaques plus sophistiquées.",
+                items: [
+                    {
+                        tag: "Protocoles",
+                        title: "Les failles critiques des protocoles domotiques inquiètent les experts en cybersécurité",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "14 Mai 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Un rapport de l'ENISA met en évidence plusieurs vulnérabilités dans les protocoles utilisés par les objets connectés et les systèmes domotiques.",
+                        content: "Le 14 mai 2025, un rapport de l'ENISA met en évidence plusieurs vulnérabilités dans les protocoles utilisés par les objets connectés et les systèmes domotiques. Ces failles touchent principalement les communications sans fil et les équipements mal configurés, facilitant les intrusions dans les réseaux domestiques. Les principaux problèmes incluent : failles dans les protocoles de communication IoT (Wi-Fi, Zigbee, Bluetooth), appareils domotiques mal configurés ou non sécurisés, risque d'interception de données entre appareils connectés, accès non autorisé aux systèmes de contrôle domestique, et difficulté de mise à jour sur certains équipements anciens."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Des attaques par botnets IoT de nouvelle génération ciblent les foyers connectés",
+                        bornage: "Attaque",
+                        author: "ANSSI (Agence nationale de la sécurité des systèmes d'information)",
+                        date: "28 Mai 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "L'ANSSI alerte sur une augmentation des attaques utilisant des botnets composés d'objets connectés compromis.",
+                        content: "Le 28 mai 2025, l'ANSSI alerte sur une augmentation des attaques utilisant des botnets composés d'objets connectés compromis. Ces réseaux d'appareils infectés sont utilisés pour lancer des attaques massives contre des services en ligne et infiltrer des réseaux domestiques. Les principales menaces incluent : infection d'objets connectés (caméras, routeurs, assistants vocaux), création de botnets IoT utilisés pour des attaques DDoS, exploitation de mots de passe faibles ou par défaut, propagation rapide dans les réseaux domestiques, et utilisation des appareils comme points d'entrée dans les systèmes privés."
+                    }
+                ]
             },
-            'quantum-crypto': {
-                title: "Cryptographie post-quantique : Préparer l'après",
-                content: ` ... `
+            {
+                month: "Juin 2025",
+                summary: "Les objets connectés continuent de se multiplier dans les foyers intelligents, mais les menaces informatiques évoluent aussi rapidement avec des cyberattaques plus automatisées.",
+                items: [
+                    {
+                        tag: "Malwares",
+                        title: "Une nouvelle vague de malwares vise les objets connectés domestiques",
+                        bornage: "Attaque",
+                        author: "CERT-FR (Centre gouvernemental de veille, d'alerte et de réponse aux attaques informatiques)",
+                        date: "Juin 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les équipes de cybersécurité signalent une augmentation de campagnes de malwares ciblant les objets connectés domestiques.",
+                        content: "En juin 2025, les équipes de cybersécurité signalent une augmentation de campagnes de malwares ciblant les objets connectés domestiques. Ces logiciels malveillants exploitent des appareils mal sécurisés pour prendre le contrôle des réseaux domestiques. Les principales menaces incluent : infection de caméras, routeurs et objets domotiques, exploitation de mots de passe faibles ou par défaut, contrôle à distance des appareils infectés, utilisation des objets pour des attaques en réseau (botnets), et propagation rapide dans les foyers connectés."
+                    },
+                    {
+                        tag: "Failles",
+                        title: "Des failles critiques découvertes dans les systèmes de maison intelligente",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "Juin 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Des chercheurs en cybersécurité identifient plusieurs failles importantes dans des systèmes de maison intelligente.",
+                        content: "En juin 2025, des chercheurs en cybersécurité identifient plusieurs failles importantes dans des systèmes de maison intelligente. Ces vulnérabilités concernent principalement la communication entre appareils et la gestion des accès utilisateurs. Les problèmes identifiés incluent : failles dans les communications entre objets connectés, mauvaise gestion des autorisations utilisateurs, risque d'accès non autorisé aux systèmes domotiques, exposition de données personnelles des foyers, et difficulté de sécurisation des anciens appareils IoT."
+                    }
+                ]
             },
-            'supply-chain': {
-                title: "Sécurisation de la chaîne d'approvisionnement logicielle",
-                content: ` ... `
+            {
+                month: "Juillet 2025",
+                summary: "La sécurité des objets connectés reste un enjeu critique avec la généralisation des maisons intelligentes et une augmentation des attaques ciblant les équipements domestiques.",
+                items: [
+                    {
+                        tag: "Assistants",
+                        title: "Les systèmes domotiques touchés par des failles critiques dans les assistants connectés",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "10 Juillet 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Des chercheurs en cybersécurité signalent plusieurs failles dans les assistants vocaux et systèmes domotiques.",
+                        content: "Le 10 juillet 2025, des chercheurs en cybersécurité signalent plusieurs failles dans les assistants vocaux et systèmes domotiques. Ces vulnérabilités permettent dans certains cas un accès non autorisé aux appareils connectés du foyer. Les principales failles incluent : failles dans les assistants vocaux et hubs domotiques, mauvaise sécurisation des commandes à distance, risque d'écoute ou d'accès non autorisé, intrusion dans les réseaux domestiques connectés, et exploitation des comptes utilisateurs mal protégés."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Augmentation des attaques par botnets IoT visant les foyers connectés",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "25 Juillet 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts en cybersécurité observent une hausse des attaques utilisant des botnets composés d'objets connectés infectés.",
+                        content: "Le 25 juillet 2025, les experts en cybersécurité observent une hausse des attaques utilisant des botnets composés d'objets connectés infectés. Ces réseaux d'appareils compromis servent à lancer des attaques massives et à infiltrer les systèmes domestiques. Les principales menaces incluent : transformation des objets connectés en machines zombies, attaques DDoS à grande échelle, exploitation de mots de passe faibles ou identiques, infection de routeurs, caméras et objets domotiques, et propagation rapide dans les réseaux domestiques."
+                    }
+                ]
             },
-            '5g-security': {
-                title: "Sécurité des réseaux 5G en entreprise",
-                content: ` ... `
+            {
+                month: "Août 2025",
+                summary: "Les objets connectés continuent de se diffuser dans les foyers intelligents, mais les cyberattaques restent très actives avec des attaques opportunistes ciblant des appareils mal sécurisés.",
+                items: [
+                    {
+                        tag: "Caméras",
+                        title: "Des failles dans les caméras connectées exposent les foyers à des intrusions",
+                        bornage: "Faille de Sécurité",
+                        author: "CERT-FR (ANSSI)",
+                        date: "08 Août 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Des alertes de cybersécurité signalent des vulnérabilités importantes dans certaines caméras connectées.",
+                        content: "Le 08 août 2025, des alertes de cybersécurité signalent des vulnérabilités importantes dans certaines caméras connectées. Ces failles permettent dans certains cas une prise de contrôle à distance par des attaquants. Les principales vulnérabilités incluent : accès non autorisé aux flux vidéo, failles dans les identifiants par défaut, contrôle à distance des caméras compromises, espionnage des utilisateurs à domicile, et risque d'intrusion dans le réseau domestique."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les objets domotiques deviennent une cible privilégiée des attaques automatisées",
+                        bornage: "Attaque",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "22 Août 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Les experts en cybersécurité constatent une augmentation des attaques automatisées visant les objets domotiques.",
+                        content: "Le 22 août 2025, les experts en cybersécurité constatent une augmentation des attaques automatisées visant les objets domotiques. Les appareils mal protégés sont intégrés dans des réseaux de botnets utilisés pour des attaques à grande échelle. Les principales menaces incluent : infection massive d'objets connectés vulnérables, utilisation des appareils pour des attaques DDoS, exploitation de mots de passe faibles ou identiques, ciblage des routeurs et systèmes domotiques, et propagation rapide dans les foyers connectés."
+                    }
+                ]
+            },
+            {
+                month: "Septembre 2025",
+                summary: "La sécurité des objets connectés reste un enjeu majeur avec la rentrée des foyers connectés et l'augmentation des équipements domotiques, des attaques de plus en plus automatisées et des failles persistantes.",
+                items: [
+                    {
+                        tag: "Vulnérabilités",
+                        title: "Des vulnérabilités critiques découvertes dans les systèmes de maison intelligente",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "09 Septembre 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Plusieurs chercheurs en cybersécurité signalent des failles dans des systèmes de maison intelligente.",
+                        content: "Le 09 septembre 2025, plusieurs chercheurs en cybersécurité signalent des failles dans des systèmes de maison intelligente. Ces vulnérabilités concernent principalement la gestion des accès et la communication entre les appareils connectés. Les principales failles incluent : mauvaise gestion des comptes utilisateurs, failles dans la communication entre objets domotiques, risque d'accès non autorisé aux systèmes domestiques, exposition de données personnelles, et difficulté de sécurisation des anciens équipements IoT."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les attaques automatisées sur les objets connectés continuent d'augmenter",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "26 Septembre 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts en cybersécurité constatent une hausse continue des attaques automatisées visant les objets connectés.",
+                        content: "Le 26 septembre 2025, les experts en cybersécurité constatent une hausse continue des attaques automatisées visant les objets connectés. Les appareils mal protégés sont rapidement intégrés à des botnets utilisés pour des attaques massives. Les principales menaces incluent : utilisation d'objets connectés compromis dans des botnets, attaques DDoS à grande échelle, exploitation de mots de passe faibles ou par défaut, ciblage des caméras, routeurs et systèmes domotiques, et propagation rapide dans les réseaux domestiques."
+                    }
+                ]
+            },
+            {
+                month: "Octobre 2025",
+                summary: "La cybersécurité des objets connectés devient encore plus critique avec la généralisation des systèmes domotiques dans les foyers et une augmentation des attaques automatisées.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Des failles critiques découvertes dans plusieurs objets domotiques grand public",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "07 Octobre 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Des chercheurs en cybersécurité identifient plusieurs vulnérabilités dans des objets domotiques utilisés dans les foyers.",
+                        content: "Le 07 octobre 2025, des chercheurs en cybersécurité identifient plusieurs vulnérabilités dans des objets domotiques utilisés dans les foyers. Ces failles concernent principalement la sécurité des communications et la gestion des accès utilisateurs. Les principales failles incluent : failles dans les communications entre objets connectés, mauvaise sécurisation des comptes utilisateurs, risque d'accès non autorisé aux systèmes domotiques, exposition de données personnelles, et difficulté de mise à jour sur certains appareils."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les attaques par botnets IoT se renforcent et deviennent plus automatisées",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "24 Octobre 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts en cybersécurité signalent une augmentation des attaques automatisées utilisant des objets connectés infectés.",
+                        content: "Le 24 octobre 2025, les experts en cybersécurité signalent une augmentation des attaques automatisées utilisant des objets connectés infectés. Ces appareils sont intégrés dans des botnets utilisés pour mener des attaques massives sur Internet. Les principales menaces incluent : infection d'objets connectés mal sécurisés, utilisation des appareils pour des attaques DDoS, exploitation de mots de passe faibles ou par défaut, ciblage des caméras, routeurs et objets domotiques, et propagation rapide dans les réseaux domestiques."
+                    }
+                ]
+            },
+            {
+                month: "Novembre 2025",
+                summary: "Les systèmes domotiques deviennent encore plus présents dans les foyers, ce qui augmente la surface d'attaque pour les cybercriminels avec des failles persistantes et des attaques automatisées.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Des failles de sécurité persistent dans les systèmes de maison intelligente",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "11 Novembre 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Des chercheurs en cybersécurité signalent que de nombreux systèmes domotiques présentent encore des failles importantes.",
+                        content: "Le 11 novembre 2025, des chercheurs en cybersécurité signalent que de nombreux systèmes domotiques présentent encore des failles importantes. Ces vulnérabilités sont souvent liées à des mises à jour insuffisantes et à une mauvaise configuration des appareils. Les principales failles incluent : mises à jour de sécurité absentes ou retardées, failles dans la gestion des accès utilisateurs, risque d'intrusion dans les réseaux domestiques, exposition de données personnelles, et vulnérabilités sur les anciens équipements IoT."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les attaques automatisées sur les objets connectés continuent de s'intensifier",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "28 Novembre 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts en cybersécurité observent une hausse des attaques automatisées visant les objets connectés.",
+                        content: "Le 28 novembre 2025, les experts en cybersécurité observent une hausse des attaques automatisées visant les objets connectés. Les appareils compromis sont utilisés pour former des réseaux de botnets capables de lancer des attaques massives. Les principales menaces incluent : infection d'objets connectés vulnérables, utilisation des appareils pour des attaques DDoS, exploitation de mots de passe faibles ou par défaut, ciblage des caméras, routeurs et systèmes domotiques, et propagation rapide dans les réseaux domestiques."
+                    }
+                ]
+            },
+            {
+                month: "Décembre 2025",
+                summary: "La cybersécurité des objets connectés reste un enjeu majeur avec l'augmentation des équipements domotiques installés dans les foyers et des attaques toujours plus ciblées et automatisées.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Les objets connectés domestiques toujours exposés à des failles critiques",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "09 Décembre 2025",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Un rapport met en évidence la persistance de nombreuses failles dans les objets connectés domestiques.",
+                        content: "Le 09 décembre 2025, un rapport met en évidence la persistance de nombreuses failles dans les objets connectés domestiques. Ces vulnérabilités concernent surtout les appareils mal sécurisés et non mis à jour. Les principales failles incluent : failles dans les systèmes de maison intelligente, mauvaise sécurisation des appareils domotiques, risque d'accès non autorisé aux données, difficulté de mise à jour de certains équipements, et exposition des réseaux domestiques aux intrusions."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les botnets IoT continuent de cibler massivement les foyers connectés",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "23 Décembre 2025",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts signalent une intensification des attaques utilisant des botnets composés d'objets connectés compromis.",
+                        content: "Le 23 décembre 2025, les experts signalent une intensification des attaques utilisant des botnets composés d'objets connectés compromis. Ces réseaux sont utilisés pour lancer des attaques massives sur Internet. Les principales menaces incluent : appareils IoT infectés et contrôlés à distance, utilisation pour des attaques DDoS à grande échelle, exploitation de mots de passe faibles ou identiques, ciblage des caméras et routeurs domestiques, et propagation rapide dans les réseaux domestiques."
+                    }
+                ]
+            },
+            {
+                month: "Janvier 2026",
+                summary: "Les objets connectés continuent de se généraliser dans les foyers intelligents avec une augmentation des attaques opportunistes liées à des équipements mal configurés.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Des failles persistantes dans les objets connectés domestiques inquiètent les experts",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "14 Janvier 2026",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Un rapport de cybersécurité met en évidence la persistance de nombreuses vulnérabilités dans les objets connectés domestiques.",
+                        content: "Le 14 janvier 2026, un rapport de cybersécurité met en évidence la persistance de nombreuses vulnérabilités dans les objets connectés domestiques. Ces failles proviennent principalement de mises à jour insuffisantes et d'une mauvaise configuration des équipements. Les principales failles incluent : mises à jour de sécurité incomplètes ou absentes, failles dans la gestion des accès utilisateurs, risque d'intrusion dans les réseaux domestiques, exposition de données personnelles, et vulnérabilités sur les anciens objets domotiques."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les attaques automatisées sur les systèmes IoT continuent de croître",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "28 Janvier 2026",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts constatent une hausse continue des attaques automatisées visant les objets connectés.",
+                        content: "Le 28 janvier 2026, les experts constatent une hausse continue des attaques automatisées visant les objets connectés. Les appareils compromis sont intégrés dans des réseaux de botnets utilisés pour des attaques massives. Les principales menaces incluent : infection d'objets connectés mal sécurisés, utilisation des appareils pour des attaques DDoS, exploitation de mots de passe faibles ou par défaut, ciblage des caméras, routeurs et systèmes domotiques, et propagation rapide dans les réseaux domestiques."
+                    }
+                ]
+            },
+            {
+                month: "Février 2026",
+                summary: "Les systèmes domotiques deviennent encore plus intégrés aux habitations intelligentes avec une augmentation des vulnérabilités et des attaques ciblant les réseaux domestiques.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Les systèmes de maison intelligente présentent encore des failles critiques",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "10 Février 2026",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Des chercheurs signalent plusieurs vulnérabilités dans les systèmes de maison intelligente.",
+                        content: "Le 10 février 2026, des chercheurs signalent plusieurs vulnérabilités dans les systèmes de maison intelligente. Ces failles concernent principalement les communications entre appareils et les systèmes de contrôle à distance. Les principales failles incluent : failles dans la communication entre objets connectés, accès non sécurisé aux interfaces domotiques, risque d'intrusion dans les réseaux domestiques, exposition de données personnelles, et difficulté de sécurisation des anciens équipements IoT."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les botnets IoT restent une menace majeure pour les foyers connectés",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "25 Février 2026",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts en cybersécurité observent la continuité des attaques utilisant des botnets composés d'objets connectés compromis.",
+                        content: "Le 25 février 2026, les experts en cybersécurité observent la continuité des attaques utilisant des botnets composés d'objets connectés compromis. Ces réseaux servent à lancer des attaques massives et à infiltrer des systèmes privés. Les principales menaces incluent : objets connectés transformés en machines zombies, attaques DDoS à grande échelle, exploitation de mots de passe faibles ou identiques, ciblage des caméras et routeurs domestiques, et propagation rapide dans les foyers connectés."
+                    }
+                ]
+            },
+            {
+                month: "Mars 2026",
+                summary: "La cybersécurité des objets connectés reste un enjeu critique avec des attaques de plus en plus automatisées et des failles continuant d'être exploitées.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Nouvelles vulnérabilités découvertes dans les objets connectés récents",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "12 Mars 2026",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Des chercheurs identifient de nouvelles failles dans des objets connectés récents.",
+                        content: "Le 12 mars 2026, des chercheurs identifient de nouvelles failles dans des objets connectés récents. Ces vulnérabilités proviennent souvent de logiciels embarqués insuffisamment sécurisés. Les principales failles incluent : failles dans les firmwares récents, mauvaise sécurisation des mises à jour automatiques, risque d'accès non autorisé aux appareils, exposition des données utilisateurs, et vulnérabilités dans les systèmes domotiques récents."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les attaques IoT automatisées atteignent un niveau record",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "29 Mars 2026",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les attaques automatisées visant les objets connectés atteignent un niveau record.",
+                        content: "Le 29 mars 2026, les attaques automatisées visant les objets connectés atteignent un niveau record. Les botnets IoT sont utilisés à grande échelle pour des attaques massives et rapides. Les principales menaces incluent : explosion des botnets IoT à grande échelle, attaques DDoS plus puissantes et fréquentes, exploitation massive des mots de passe faibles, ciblage des objets domotiques et caméras connectées, et propagation ultra rapide dans les réseaux domestiques."
+                    }
+                ]
+            },
+            {
+                month: "Avril 2026",
+                summary: "Les systèmes domotiques sont de plus en plus intégrés dans les foyers intelligents, entraînant une augmentation des surfaces d'attaque et des risques de sécurité.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Les systèmes domotiques domestiques exposés à de nouvelles failles critiques",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "11 Avril 2026",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Plusieurs failles sont détectées dans des systèmes domotiques utilisés dans les foyers.",
+                        content: "Le 11 avril 2026, plusieurs failles sont détectées dans des systèmes domotiques utilisés dans les foyers. Ces vulnérabilités concernent principalement les accès à distance et les communications entre appareils. Les principales failles incluent : failles dans les accès à distance, mauvaise sécurisation des objets connectés, risque d'intrusion dans les maisons intelligentes, exposition des données personnelles, et difficulté de sécurisation des anciens systèmes."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les attaques par botnets IoT continuent de cibler les foyers connectés",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "26 Avril 2026",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts signalent la poursuite des attaques utilisant des botnets composés d'objets connectés compromis.",
+                        content: "Le 26 avril 2026, les experts signalent la poursuite des attaques utilisant des botnets composés d'objets connectés compromis. Ces attaques restent très efficaces contre les réseaux domestiques mal protégés. Les principales menaces incluent : objets connectés utilisés comme machines zombies, attaques DDoS à grande échelle, exploitation de mots de passe faibles ou identiques, ciblage des caméras et routeurs domestiques, et propagation rapide dans les réseaux privés."
+                    }
+                ]
+            },
+            {
+                month: "Mai 2026",
+                summary: "En mai 2026, la cybersécurité des objets connectés demeure un enjeu majeur avec de nouvelles vulnérabilités détectées et une augmentation des attaques sophistiquées.",
+                items: [
+                    {
+                        tag: "Failles",
+                        title: "Nouvelles vulnérabilités critiques détectées dans les équipements domotiques",
+                        bornage: "Faille de Sécurité",
+                        author: "ENISA (European Union Agency for Cybersecurity)",
+                        date: "08 Mai 2026",
+                        link: "https://www.enisa.europa.eu",
+                        excerpt: "Des chercheurs découvrent plusieurs nouvelles vulnérabilités dans les équipements domotiques populaires.",
+                        content: "Le 08 mai 2026, des chercheurs en cybersécurité découvrent plusieurs nouvelles vulnérabilités critiques dans des équipements domotiques largement utilisés. Ces failles concernent principalement les protocoles de communication et les interfaces de gestion à distance. Les principales vulnérabilités incluent : failles dans les protocoles IoT, mauvaise validation des entrées utilisateurs, exposition de clés API, risque d'accès non autorisé aux systèmes, et vulnérabilités dans les applications mobiles de contrôle."
+                    },
+                    {
+                        tag: "Botnets",
+                        title: "Les attaques par rançongiciel ciblant les systèmes domotiques augmentent drastiquement",
+                        bornage: "Attaque",
+                        author: "CERT-FR (ANSSI)",
+                        date: "22 Mai 2026",
+                        link: "https://cyber.gouv.fr",
+                        excerpt: "Les experts observent une hausse alarmante des attaques par rançongiciel ciblant les systèmes domotiques.",
+                        content: "Le 22 mai 2026, les experts en cybersécurité observent une hausse alarmante des attaques par rançongiciel ciblant spécifiquement les systèmes domotiques. Ces attaques exploitent les objets connectés mal sécurisés pour infiltrer les réseaux domestiques et les systèmes professionnels. Les principales menaces incluent : utilisation de botnets IoT pour lancer des attaques rançongiciel, chiffrement des données domestiques et exfiltration, exploitation des failles non patchées, demandes de rançon ciblées, et impact sur la vie privée des utilisateurs."
+                    }
+                ]
             }
-        };
+        ];
+
+        const monthButtons = document.getElementById("monthButtons");
+        const monthNews = document.getElementById("monthNews");
+        const selectedMonthTitle = document.getElementById("selectedMonthTitle");
+        const newsModal = document.getElementById("newsModal");
+        const newsModalTitle = document.getElementById("newsModalTitle");
+        const newsModalBody = document.getElementById("newsModalBody");
+        const newsModalClose = document.getElementById("newsModalClose");
+
+        function openNewsModal(month, item) {
+            newsModalTitle.textContent = item.title;
+            newsModalBody.innerHTML = `
+                <div class="modal-detail">
+                    <p><strong>Titre :</strong> ${item.title}</p>
+                    <p><strong>Bornage :</strong> ${item.bornage}</p>
+                    <p><strong>Auteur :</strong> ${item.author}</p>
+                    <p><strong>Date :</strong> ${item.date}</p>
+                    <p><strong>Lien :</strong> <a href="${item.link}" target="_blank" rel="noopener noreferrer">Consulter la source</a></p>
+                    <p><strong>Contenu :</strong></p>
+                    <p>${item.content}</p>
+                </div>
+            `;
+            newsModal.classList.add("show");
+            newsModal.style.display = "block";
+            newsModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeNewsModal() {
+            newsModal.classList.remove("show");
+            newsModal.style.display = "none";
+            newsModal.setAttribute("aria-hidden", "true");
+        }
+
+        let monthSelect = null;
+
+        function renderMonth(monthIndex) {
+            const month = monthlyNews[monthIndex];
+            selectedMonthTitle.textContent = month.month;
+            monthNews.innerHTML = month.items.map(item => `
+                <article class="news-card" role="button" tabindex="0" aria-label="Ouvrir la news ${item.title}">
+                    <div class="news-card-tag">${item.tag}</div>
+                    <h3 class="news-card-title">${item.title}</h3>
+                    <p class="news-card-excerpt">${item.excerpt}</p>
+                </article>
+            `).join("");
+
+            const newsCards = monthNews.querySelectorAll(".news-card");
+            newsCards.forEach((card, index) => {
+                const openCard = () => openNewsModal(month, month.items[index]);
+                card.addEventListener("click", openCard);
+                card.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        openCard();
+                    }
+                });
+            });
+
+            if (monthSelect) monthSelect.value = monthIndex;
+        }
+
+        // create a dropdown (with placeholder) instead of many buttons
+        monthSelect = document.createElement("select");
+        monthSelect.className = "month-select";
+        monthSelect.setAttribute('aria-label', 'Sélectionner le mois');
+
+        monthlyNews.forEach((month, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = month.month;
+            monthSelect.appendChild(option);
+        });
+        monthSelect.addEventListener('change', () => {
+            renderMonth(parseInt(monthSelect.value, 10));
+        });
+
+        monthButtons.appendChild(monthSelect);
+        // select first month by default
+        monthSelect.value = '0';
+
+        newsModalClose.addEventListener("click", closeNewsModal);
+        newsModal.addEventListener("click", (event) => {
+            if (event.target === newsModal) {
+                closeNewsModal();
+            }
+        });
+        window.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && newsModal.classList.contains("show")) {
+                closeNewsModal();
+            }
+        });
+
+        renderMonth(0);
     </script>
 </body>
 </html>

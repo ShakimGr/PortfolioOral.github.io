@@ -6,14 +6,16 @@
     <title>Réalisations professionnelles - Shakim Guerin</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%23000000' d='M32 64c0-17.7 14.3-32 32-32H576c17.7 0 32 14.3 32 32V160c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V64zm0 160c0-17.7 14.3-32 32-32H576c17.7 0 32 14.3 32 32V320c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V224zM128 96a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0 160a32 32 0 1 0 0 64 32 32 0 1 0 0-64z'/></svg>">
 </head>
-<body>
+<body class="reapro-page">
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="profile-img"></div>
             <h1 class="name">Shakim Guerin</h1>
-            <p class="title">Technicien Sécurité Réseau</p>
+            <p class="title">Administrateur systèmes et réseaux</p>
             
             <div class="contact-info">
                 <a href="https://www.linkedin.com/in/shakim-guerin-468437383" target="_blank" class="contact-item">
@@ -60,71 +62,263 @@
 
             <!-- Catégories cliquables -->
             <div class="categories-filter">
-                <a href="#patrimoine" class="category-btn">Gérer le patrimoine informatique</a>
-                <a href="#incidents" class="category-btn">Répondre aux incidents et demandes</a>
-                <a href="#presence" class="category-btn">Développer la présence en ligne</a>
-                <a href="#projet" class="category-btn">Travailler en mode projet</a>
-                <a href="#service" class="category-btn">Mettre à disposition un service</a>
-                <a href="#developpement" class="category-btn">Organiser son développement pro</a>
+                <a href="#patrimoine" class="category-btn">1. Gérer le patrimoine informatique</a>
+                <a href="#incidents" class="category-btn">2. Répondre aux incidents et aux demandes</a>
+                <a href="#presence" class="category-btn">3. Développer la présence en ligne</a>
+                <a href="#projet" class="category-btn">4. Travailler en mode projet</a>
+                <a href="#service" class="category-btn">5. Mettre à disposition un service informatique</a>
+                <a href="#developpement" class="category-btn">6. Organiser son développement professionnel</a>
             </div>
 
             <!-- Sections -->
             <section id="patrimoine" class="content-section">
-                <h2 class="section-title">Gérer le patrimoine informatique</h2>
+                <h2 class="section-title">1. Gérer le patrimoine informatique</h2>
                 <div class="card-grid">
-                    <div class="card">
-                        <h3>Exemple Devoir 1</h3>
-                        <p>Description rapide de ce projet ou exercice lié à la gestion du patrimoine informatique.</p>
+                    <div class="card tp-card">
+                        <h3>TP - Gestion de parc et inventaire</h3>
+                        <p class="tp-summary">Inventaire centralisé des équipements pour suivre le parc informatique et ses affectations.</p>
+                        <ul class="tp-points">
+                            <li>Organisation des postes et du matériel dans GLPI.</li>
+                            <li>Suivi du cycle de vie des équipements.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Gérer le patrimoine informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Sécurité Réseau</h3>
+                        <p class="tp-summary">Sécurisation du réseau pour protéger les échanges et limiter les accès non autorisés.</p>
+                        <ul class="tp-points">
+                            <li>Configuration d'un firewall, d'une DMZ et de protections réseau.</li>
+                            <li>Contrôle des flux et durcissement des accès.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Gérer le patrimoine informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Supervision</h3>
+                        <p class="tp-summary">Mise en place d'outils de supervision pour surveiller l'état et la disponibilité des services.</p>
+                        <ul class="tp-points">
+                            <li>Suivi des équipements avec Zabbix, SNMP et outils de contrôle.</li>
+                            <li>Tests de continuité et de disponibilité.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Gérer le patrimoine informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Annuaire et services centralisés</h3>
+                        <p class="tp-summary">Centralisation des comptes et des services d'annuaire pour simplifier l'administration.</p>
+                        <ul class="tp-points">
+                            <li>Gestion d'Active Directory, GPO et réplication.</li>
+                            <li>Organisation des utilisateurs et des groupes.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Gérer le patrimoine informatique</p>
                     </div>
                 </div>
             </section>
 
             <section id="incidents" class="content-section">
-                <h2 class="section-title">Répondre aux incidents et demandes</h2>
+                <h2 class="section-title">2. Répondre aux incidents et aux demandes</h2>
                 <div class="card-grid">
-                    <div class="card">
-                        <h3>Exemple Devoir 2</h3>
-                        <p>Description rapide du travail réalisé pour répondre à un incident ou une demande d’évolution.</p>
+                    <div class="card tp-card">
+                        <h3>TP - Maintenance et dépannage des infrastructures réseaux</h3>
+                        <p class="tp-summary">Diagnostic et correction d'incidents réseau pour rétablir rapidement le service.</p>
+                        <ul class="tp-points">
+                            <li>Analyse des symptômes et identification des causes.</li>
+                            <li>Correction des pannes de connectivité, adressage et routage.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Répondre aux incidents et aux demandes d’assistance et d’évolution</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Gestion de la hotline</h3>
+                        <p class="tp-summary">Prise en charge des demandes utilisateurs et suivi des incidents au quotidien.</p>
+                        <ul class="tp-points">
+                            <li>Qualification des demandes et priorisation.</li>
+                            <li>Suivi des tickets et communication avec les utilisateurs.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Répondre aux incidents et aux demandes d’assistance et d’évolution</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Dépannage et support client</h3>
+                        <p class="tp-summary">Accompagnement des utilisateurs avec résolution des problèmes techniques et support de proximité.</p>
+                        <ul class="tp-points">
+                            <li>Diagnostic réseau et assistance utilisateur.</li>
+                            <li>Rédaction de comptes rendus et validation du retour au service.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Répondre aux incidents et aux demandes d’assistance et d’évolution</p>
                     </div>
                 </div>
             </section>
 
             <section id="presence" class="content-section">
-                <h2 class="section-title">Développer la présence en ligne</h2>
+                <h2 class="section-title">3. Développer la présence en ligne</h2>
                 <div class="card-grid">
-                    <div class="card">
-                        <h3>Exemple Devoir 3</h3>
-                        <p>Description rapide du projet lié au développement de la présence en ligne.</p>
+                    <div class="card tp-card">
+                        <h3>TP - Projet Web E-commerce (Équipe)</h3>
+                        <p class="tp-summary">Développement d'un site e-commerce en équipe avec intégration front-end et back-end.</p>
+                        <ul class="tp-points">
+                            <li>Création des pages et fonctionnalités du site.</li>
+                            <li>Tests fonctionnels et préparation à la mise en ligne.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Développer la présence en ligne de l’organisation</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Création d'un compte LinkedIn</h3>
+                        <p class="tp-summary">Mise en place d'une présence professionnelle en ligne pour valoriser le profil et les compétences.</p>
+                        <ul class="tp-points">
+                            <li>Création et personnalisation du profil professionnel.</li>
+                            <li>Valorisation des compétences et des réalisations.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Développer la présence en ligne de l’organisation</p>
                     </div>
                 </div>
             </section>
 
             <section id="projet" class="content-section">
-                <h2 class="section-title">Travailler en mode projet</h2>
+                <h2 class="section-title">4. Travailler en mode projet</h2>
                 <div class="card-grid">
-                    <div class="card">
-                        <h3>Exemple Devoir 4</h3>
-                        <p>Description d’un projet réalisé en collaboration.</p>
+                    <div class="card tp-card">
+                        <h3>TP - Multi Projet Windows/Linux</h3>
+                        <p class="tp-summary">Gestion simultanée de plusieurs environnements pour coordonner les livrables et les tâches.</p>
+                        <ul class="tp-points">
+                            <li>Planification des actions et suivi de l'avancement.</li>
+                            <li>Coordination entre les environnements Windows et Linux.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Travailler en mode projet</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>Projet AP Mairie</h3>
+                        <p class="tp-summary">Mise en place d'une infrastructure réseau et système simulant une vraie mairie pour organiser les services et les accès.</p>
+                        <ul class="tp-points">
+                            <li>Conception d'une architecture réseau et système adaptée à une mairie.</li>
+                            <li>Création d'environnements séparés pour les services et les utilisateurs.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Travailler en mode projet</p>
                     </div>
                 </div>
             </section>
 
             <section id="service" class="content-section">
-                <h2 class="section-title">Mettre à disposition un service informatique</h2>
+                <h2 class="section-title">5. Mettre à disposition un service informatique</h2>
                 <div class="card-grid">
-                    <div class="card">
-                        <h3>Exemple Devoir 5</h3>
-                        <p>Description du projet de mise en service informatique.</p>
+                    <div class="card tp-card">
+                        <h3>TP - Mise en place et administration de serveurs</h3>
+                        <p class="tp-summary">Déploiement et administration de serveurs pour fournir les services essentiels aux utilisateurs.</p>
+                        <ul class="tp-points">
+                            <li>Installation et configuration des services serveur.</li>
+                            <li>Gestion des rôles et de la disponibilité.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Mise en place et administration de services RDS</h3>
+                        <p class="tp-summary">Publication de services de bureau à distance pour les utilisateurs du réseau.</p>
+                        <ul class="tp-points">
+                            <li>Configuration des accès distants.</li>
+                            <li>Administration des sessions et des droits d'accès.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Déploiement automatique de comptes administrateurs locaux</h3>
+                        <p class="tp-summary">Automatisation de la création et de la gestion des comptes locaux sur les postes.</p>
+                        <ul class="tp-points">
+                            <li>Scripts d'automatisation et de sécurisation.</li>
+                            <li>Harmonisation des accès administrateurs.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Administration serveur</h3>
+                        <p class="tp-summary">Gestion courante des serveurs pour assurer leur bon fonctionnement et leur disponibilité.</p>
+                        <ul class="tp-points">
+                            <li>Maintenance des services et contrôle de l'état système.</li>
+                            <li>Gestion des mises à jour et des comptes.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Configuration et gestion des équipements réseau</h3>
+                        <p class="tp-summary">Mise en place et administration des équipements réseau nécessaires à l'infrastructure.</p>
+                        <ul class="tp-points">
+                            <li>Configuration des commutateurs, routeurs et interfaces.</li>
+                            <li>Gestion de la segmentation et des accès.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Réalisation du brassage dans les baies informatiques</h3>
+                        <p class="tp-summary">Organisation physique du câblage pour assurer un réseau propre, lisible et maintenable.</p>
+                        <ul class="tp-points">
+                            <li>Brassage des baies et repérage des liaisons.</li>
+                            <li>Respect des règles de câblage et de documentation.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Migration de serveurs Windows 2012 vers Windows 2022</h3>
+                        <p class="tp-summary">Modernisation de l'infrastructure serveur vers une version plus récente et plus sûre.</p>
+                        <ul class="tp-points">
+                            <li>Préparation, migration et validation des services.</li>
+                            <li>Contrôle de la continuité de service après bascule.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Installation et configuration d’une infrastructure Multi-WAN</h3>
+                        <p class="tp-summary">Mise en place d'une architecture réseau à plusieurs liaisons WAN pour améliorer la disponibilité.</p>
+                        <ul class="tp-points">
+                            <li>Paramétrage de la redondance et du basculement.</li>
+                            <li>Test de la continuité de connexion.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Mise en place d’un VPN SSL</h3>
+                        <p class="tp-summary">Accès distant sécurisé aux ressources de l'organisation via tunnel VPN.</p>
+                        <ul class="tp-points">
+                            <li>Configuration des accès distants chiffrés.</li>
+                            <li>Validation de la connexion des utilisateurs.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Configuration des règles de filtrage et de sécurité réseau</h3>
+                        <p class="tp-summary">Mise en œuvre des règles de filtrage pour sécuriser les flux et les services exposés.</p>
+                        <ul class="tp-points">
+                            <li>Filtrage réseau et règles de sécurité.</li>
+                            <li>Protection des services et des accès.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Renommage du domaine Active Directory et intégration au cœur de réseau du siège social</h3>
+                        <p class="tp-summary">Adaptation de l'annuaire au cœur de réseau de l'organisation et intégration de l'infrastructure existante.</p>
+                        <ul class="tp-points">
+                            <li>Renommage et réorganisation de l'annuaire AD.</li>
+                            <li>Intégration au réseau du siège social.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Mettre à disposition des utilisateurs un service informatique</p>
                     </div>
                 </div>
             </section>
 
             <section id="developpement" class="content-section">
-                <h2 class="section-title">Organiser son développement professionnel</h2>
+                <h2 class="section-title">6. Organiser son développement professionnel</h2>
                 <div class="card-grid">
-                    <div class="card">
-                        <h3>Exemple Devoir 6</h3>
-                        <p>Description des actions entreprises pour le développement professionnel.</p>
+                    <div class="card tp-card">
+                        <h3>TP - Veille Technologique - Sécurité IoT et domotique</h3>
+                        <p class="tp-summary">Mise en place d'une veille sur la sécurité des objets connectés et de la domotique.</p>
+                        <ul class="tp-points">
+                            <li>Collecte d'informations via Google Alerts et Feedly.</li>
+                            <li>Analyse et synthèse des menaces émergentes.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Organiser son développement professionnel</p>
+                    </div>
+                    <div class="card tp-card">
+                        <h3>TP - Rédaction de documents techniques et procédures d’exploitation</h3>
+                        <p class="tp-summary">Production de documents utiles à l'exploitation et à la transmission des connaissances.</p>
+                        <ul class="tp-points">
+                            <li>Rédaction de procédures claires et reproductibles.</li>
+                            <li>Capitalisation des travaux réalisés.</li>
+                        </ul>
+                        <p class="tp-competence"><strong>Compétence BTS SIO :</strong> Organiser son développement professionnel</p>
                     </div>
                 </div>
             </section>

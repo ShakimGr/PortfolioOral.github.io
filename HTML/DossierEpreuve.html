@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier d'épreuve - Shakim Guerin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .dossier-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .dossier-hero {
+            max-width: 980px;
+            width: 100%;
+            text-align: left;
+            align-self: flex-start;
+        }
+
+        .dossier-hero .section-title {
+            margin-bottom: 0.6rem;
+        }
+
+        .dossier-hero .section-text {
+            margin-bottom: 0;
+        }
+
+        .dossier-document {
+            width: min(100%, 1100px);
+            background: #f7f5f0;
+            color: #1c1c1c;
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(139, 92, 246, 0.18);
+        }
+
+        .document-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2a163f;
+        }
+
+        .document-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .fiche-card {
+            background: #fffdf9;
+            border: 1px solid rgba(42, 22, 63, 0.12);
+            border-radius: 18px;
+            padding: 1.4rem 1.45rem;
+            line-height: 1.7;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .fiche-card h3 {
+            color: #2a163f;
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+        }
+
+        .fiche-card h4 {
+            color: #4f2b75;
+            margin: 1.1rem 0 0.55rem;
+            font-size: 1.02rem;
+        }
+
+        .fiche-card p,
+        .fiche-card li {
+            font-size: 0.98rem;
+        }
+
+        .fiche-card ul {
+            margin: 0.35rem 0 0.9rem 1.2rem;
+            padding-left: 1rem;
+        }
+
+        .meta-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem 1rem;
+            margin: 0.9rem 0 0.4rem;
+        }
+
+        .meta-item {
+            background: rgba(139, 92, 246, 0.06);
+            border: 1px solid rgba(139, 92, 246, 0.12);
+            border-radius: 12px;
+            padding: 0.75rem 0.85rem;
+        }
+
+        .meta-label {
+            display: block;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #7b669b;
+            margin-bottom: 0.2rem;
+        }
+
+        .meta-value {
+            color: #1c1c1c;
+            font-weight: 600;
+        }
+
+        .split-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .fiche-separator {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.35), transparent);
+            margin: 0.25rem 0;
+        }
+
+        .mini-box {
+            border: 1px solid rgba(139, 92, 246, 0.14);
+            border-radius: 14px;
+            padding: 0.9rem 1rem;
+            background: #fff;
+        }
+
+        .mini-box strong {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #2a163f;
+        }
+
+        .dossier-download {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .dossier-download .category-btn {
+            min-width: 320px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .dossier-document {
+                padding: 1.1rem;
+                border-radius: 16px;
+            }
+
+            .meta-row,
+            .split-block {
+                grid-template-columns: 1fr;
+            }
+
+            .dossier-download .category-btn {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-img"></div>
+            <h1 class="name">Shakim Guerin</h1>
+            <p class="title">Administrateur systèmes et réseaux</p>
+
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/shakim-guerin-468437383" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <span class="contact-label">LinkedIn</span>
+                        <div class="contact-value">Shakim Guerin</div>
+                    </div>
+                </a>
+                <a href="mailto:shakimguerin51@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span class="contact-label">Email</span>
+                        <div class="contact-value">shakimguerin51@gmail.com</div>
+                    </div>
+                </a>
+                <a href="../cv_shakim_guerin.pdf" download class="contact-item">
+                    <i class="fas fa-file-alt"></i>
+                    <div>
+                        <span class="contact-label">CV</span>
+                        <div class="contact-value">Télécharger</div>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="../index.html">À propos</a></li>
+                    <li><a href="veille.html">Veille Technologique</a></li>
+                    <li><a href="Rectorat.html" class="active">Rectorat</a></li>
+                    <li><a href="ReaPro.html">Réalisations professionnelles</a></li>
+                </ul>
+            </nav>
+
+            <section class="blog-header">
+                <h1 class="blog-title">Dossier d'épreuve</h1>
+                <p class="blog-subtitle">Épreuves pratiques E6 du BTS SIO</p>
+            </section>
+
+            <div class="categories-filter">
+                <a href="Rectorat.html#tableau" class="category-btn">Épreuve E5</a>
+                <a href="DossierEpreuve.html" class="category-btn active">Épreuve E6</a>
+            </div>
+
+            <section class="content-section dossier-page">
+                <div class="dossier-hero">
+                    <h2 class="section-title">Aperçu du dossier E6</h2>
+                </div>
+
+                <article class="dossier-document" aria-label="Dossier E6">
+                    <h2 class="document-title">BTS SERVICES INFORMATIQUES AUX ORGANISATIONS - SESSION 2025</h2>
+
+                    <div class="document-grid">
+                        <section class="fiche-card">
+                            <h3>ANNEXE 9-1-A : Fiche descriptive de réalisation professionnelle - Réalisation n°1</h3>
+                            <p><strong>Épreuve E6 :</strong> Administration des systèmes et des réseaux (option SISR)</p>
+
+                            <div class="meta-row">
+                                <div class="meta-item"><span class="meta-label">Nom, prénom</span><span class="meta-value">Guerin Shakim</span></div>
+                                <div class="meta-item"><span class="meta-label">N° candidat</span><span class="meta-value">02047210446</span></div>
+                                <div class="meta-item"><span class="meta-label">Épreuve</span><span class="meta-value">Contrôle en cours de formation</span></div>
+                                <div class="meta-item"><span class="meta-label">Date</span><span class="meta-value">06/05/2026</span></div>
+                            </div>
+
+                            <h4>Description d’une réalisation professionnelle</h4>
+                            <p><strong>Organisation support :</strong> LINUX</p>
+                            <p><strong>Intitulé :</strong> Load Balancing des Serveurs WEB dans une DMZ avec Suricata</p>
+                            <p><strong>Période de réalisation :</strong> Campus La Chataigneraie [ILO4.2]</p>
+                            <p><strong>Modalité :</strong> Seul(e)</p>
+
+                            <h4>Compétences travaillées</h4>
+                            <ul>
+                                <li>Concevoir une solution d’infrastructure réseau</li>
+                                <li>Installer, tester et déployer une solution d’infrastructure réseau</li>
+                                <li>Exploiter, dépanner et superviser une solution d’infrastructure réseau</li>
+                            </ul>
+
+                            <div class="split-block">
+                                <div class="mini-box">
+                                    <strong>Conditions de réalisation</strong>
+                                    <p><u>Ressources fournies</u></p>
+                                    <ul>
+                                        <li>Un environnement de virtualisation (Hyper-V)</li>
+                                        <li>Une machine virtuelle pfSense</li>
+                                        <li>Deux machines virtuelles sous Debian 13</li>
+                                        <li>Accès aux paquets logiciels (Apache, HAProxy, Suricata)</li>
+                                    </ul>
+                                    <p><u>Résultats attendus</u></p>
+                                    <ul>
+                                        <li>Mise en place d’une DMZ sécurisée</li>
+                                        <li>Déploiement de deux serveurs Web accessibles</li>
+                                        <li>Mise en place d’un système de répartition de charge</li>
+                                        <li>Assurer la haute disponibilité du service Web</li>
+                                        <li>Détection d’activités réseau suspectes (ex : ping)</li>
+                                    </ul>
+                                </div>
+                                <div class="mini-box">
+                                    <strong>Ressources documentaires, matérielles et logicielles</strong>
+                                    <p><u>Logiciels utilisés</u></p>
+                                    <ul>
+                                        <li>pfSense → routage, firewall, DMZ</li>
+                                        <li>HAProxy → load balancing</li>
+                                        <li>Suricata → détection d’intrusion</li>
+                                        <li>Apache → serveur Web</li>
+                                        <li>Debian 13 → système des serveurs</li>
+                                        <li>Hyper-V → virtualisation</li>
+                                    </ul>
+                                    <p><u>Modalités d’accès aux productions</u></p>
+                                    <p>Le projet sera documenté dans un document Word.</p>
+                                </div>
+                            </div>
+
+                            <h4>Descriptif de la réalisation professionnelle</h4>
+                            <ul>
+                                <li>Installation de deux serveurs Web Debian avec Apache</li>
+                                <li>Configuration du pare-feu pfSense avec plusieurs interfaces (LAN / WAN / DMZ)</li>
+                                <li>Création d’une DMZ pour isoler les serveurs Web</li>
+                                <li>Mise en place d’un Load Balancer avec HAProxy</li>
+                                <li>Configuration de Suricata pour détecter les paquets ICMP (ping)</li>
+                                <li>Tests de fonctionnement (accès web, répartition de charge, alertes IDS)</li>
+                            </ul>
+                        </section>
+
+                        <div class="fiche-separator" aria-hidden="true"></div>
+
+                        <section class="fiche-card">
+                            <h3>ANNEXE 9-1-A : Fiche descriptive de réalisation professionnelle - Réalisation n°2</h3>
+                            <p><strong>Épreuve E6 :</strong> Administration des systèmes et des réseaux (option SISR)</p>
+
+                            <div class="meta-row">
+                                <div class="meta-item"><span class="meta-label">Nom, prénom</span><span class="meta-value">Guerin Shakim</span></div>
+                                <div class="meta-item"><span class="meta-label">N° candidat</span><span class="meta-value">02047210446</span></div>
+                                <div class="meta-item"><span class="meta-label">Épreuve</span><span class="meta-value">Contrôle en cours de formation</span></div>
+                                <div class="meta-item"><span class="meta-label">Date</span><span class="meta-value">06/05/2026</span></div>
+                            </div>
+
+                            <h4>Description d’une réalisation professionnelle</h4>
+                            <p><strong>Organisation support :</strong> Windows</p>
+                            <p><strong>Intitulé :</strong> Mise en œuvre d'un laboratoire d'analyse de logiciels malveillants (Sandboxing)</p>
+                            <p><strong>Période de réalisation :</strong> Campus La Chataigneraie [ILO4.2]</p>
+                            <p><strong>Modalité :</strong> Seul(e)</p>
+
+                            <h4>Compétences travaillées</h4>
+                            <ul>
+                                <li>Concevoir une solution d’infrastructure réseau</li>
+                                <li>Installer, tester et déployer une solution d’infrastructure réseau</li>
+                                <li>Exploiter, dépanner et superviser une solution d’infrastructure réseau</li>
+                            </ul>
+
+                            <div class="split-block">
+                                <div class="mini-box">
+                                    <strong>Conditions de réalisation</strong>
+                                    <p><u>Ressources fournies</u></p>
+                                    <ul>
+                                        <li>Poste informatique Windows</li>
+                                        <li>Hyperviseur Oracle VM VirtualBox</li>
+                                        <li>ISO Windows 10</li>
+                                        <li>Accès internet pour téléchargement des outils</li>
+                                    </ul>
+                                    <p><u>Résultats attendus</u></p>
+                                    <ul>
+                                        <li>Mise en place d’un environnement isolé d’analyse malware</li>
+                                        <li>Création de machines virtuelles reproductibles</li>
+                                        <li>Observation du comportement des logiciels malveillants</li>
+                                        <li>Possibilité de restaurer rapidement un environnement sain</li>
+                                    </ul>
+                                </div>
+                                <div class="mini-box">
+                                    <strong>Ressources documentaires, matérielles et logicielles</strong>
+                                    <p><u>Logiciels utilisés</u></p>
+                                    <ul>
+                                        <li>Oracle VM VirtualBox → virtualisation</li>
+                                        <li>FLARE VM → analyse malware</li>
+                                        <li>FakeNet-NG → simulation réseau</li>
+                                        <li>Wireshark → analyse réseau</li>
+                                        <li>PowerShell → automatisation</li>
+                                    </ul>
+                                    <p><u>Modalités d’accès aux productions</u></p>
+                                    <p>Le projet sera documenté dans un document Word.</p>
+                                </div>
+                            </div>
+
+                            <h4>Descriptif de la réalisation professionnelle</h4>
+                            <ul>
+                                <li>Installation de VirtualBox et création d’une VM Windows 10</li>
+                                <li>Configuration d’un réseau Host-Only pour isoler la machine</li>
+                                <li>Installation de FLARE VM pour disposer d’outils d’analyse malware</li>
+                                <li>Installation de FakeNet-NG pour simuler des services réseau</li>
+                                <li>Analyse d’un malware : observation des processus, fichiers et connexions</li>
+                                <li>Utilisation de Wireshark pour analyser le trafic réseau</li>
+                                <li>Restauration de la machine via snapshot après chaque test</li>
+                            </ul>
+                        </section>
+                    </div>
+                </article>
+
+                <div class="dossier-download">
+                    <a href="../assets/SGU_DossierEpreuve.docx" download class="category-btn">
+                        <i class="fas fa-download"></i> Télécharger le dossier E6
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
